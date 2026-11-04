@@ -1,0 +1,9 @@
+outputs/
+plots/
+figures/viz/outputs/
+**/__pycache__/
+**/*.py[cod]
+**/*.so
+**/*.pyd
+.venv*/
+.git/

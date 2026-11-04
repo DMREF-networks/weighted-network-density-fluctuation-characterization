@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "weighted-network-density-fluctuation-characterization"
+version = "4.1.0"
+description = "Spectral density and edge-length variance of weighted periodic tessellation networks (2D/3D)"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.9,<3.11"
+dependencies = [
+  "numpy>=1.24,<2.2",
+  "scipy>=1.10",
+  "numba>=0.58",
+  "pyvoro==1.3.2",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+figures = ["matplotlib>=3.7"]
+streaming = ["Cython>=0.29"]
+gpu = ["cupy-cuda12x>=12"]
+
+[tool.setuptools.packages.find]
+include = ["wndfc", "wndfc.*"]
+
+[tool.setuptools.package-data]
+wndfc = ["c_voro/**/*", "streaming/*.pyx", "streaming/*.hpp"]
+
+[project.scripts]
+wndfc = "wndfc.__main__:main"
+weighted-network-density-fluctuation-characterization = "wndfc.__main__:main"
