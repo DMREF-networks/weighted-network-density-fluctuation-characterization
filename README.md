@@ -14,21 +14,6 @@ Companion code for the paper cited [below](#citation). Import and command name: 
 
 The ensemble results used in the paper are available at [Google Drive](https://drive.google.com/drive/folders/1K3lpf-nONYxQ4OK8QV42Lvp_dYe_VJV8). <!-- TODO: move to Zenodo and replace with DOI -->
 
-## Citation
-
-If you use this code, please cite:
-
-> Copeland and Maher, "Quantification of density fluctuations in weighted networks across length scales and generation of hyperuniform network structures," in preparation (2026).
-
-```bibtex
-@unpublished{copeland2026weighted,
-  title  = {Quantification of density fluctuations in weighted networks across length scales and generation of hyperuniform network structures},
-  author = {Copeland, Leon and Maher, Charles},
-  year   = {2026},
-  note   = {In preparation}
-}
-```
-
 ## Setup
 
 **Local install:**
@@ -69,7 +54,7 @@ Select with `--chi-backend cupy` or `backend="cupy"` (only the spectral sum runs
 
 ```sh
 # Delaunay network on 1600 uniform i.i.d. points in [0, 40)^2, apex-based (𝒟) weights;
-# computes chi(k) to k = 30 plus the direct weighted edge-length variance -> run.npz
+# computes \tilde{chi}(k) to k = 30 plus the direct weighted edge-length variance -> run.npz
 wndfc --poisson 1600 -L 40 --ntype D --weight dual_diamond_planar \
     --kmax 30 --with-direct-sigma2 --out run.npz
 ```
@@ -286,5 +271,20 @@ Exit codes: `0` success, `2` invalid arguments, `3` tiling/structural check fail
 **`metadata` keys:**
 - **Identity & grid:** `gauge`, `d`, `L`, `V`, `N_ell`, `gen`, `tess`, `scheme`, `theta`, `seed`, `ens`, `code_version`, `cell`, `dk`, `k_max`, `n_bins`, `shell_mode`
 - **Sums & diagnostics:** `sum_wl`, `sum_w2l`, `sum_w2l2`, `sum_w2l3`, `sum_w2l_kmax`, `vertex_wedge_sum`, `rho_w_emp`, `source`, `chi_backend`, `network_source`, `c_area_mode`, `phi`, `contact_stats`, `sigma2`, `h_ell`
+
+## Citation
+
+If you use this code, please cite:
+
+> Copeland and Maher, "Quantification of density fluctuations in weighted networks across length scales and generation of hyperuniform network structures," in preparation (2026).
+
+```bibtex
+@unpublished{copeland2026weighted,
+  title  = {Quantification of density fluctuations in weighted networks across length scales and generation of hyperuniform network structures},
+  author = {Copeland, Leon and Maher, Charles},
+  year   = {2026},
+  note   = {In preparation}
+}
+```
 
 [^1]: C. H. Rycroft, "VORO++: A three-dimensional Voronoi cell library in C++," Chaos 19, 041111 (2009). doi:10.1063/1.3215722
