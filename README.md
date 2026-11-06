@@ -10,10 +10,6 @@ The structures are assumed to be in a periodic square or cubic box.
 
 Companion code for the paper cited [below](#citation). Import and command name: `wndfc`.
 
-## Data
-
-The ensemble results used in the paper are available at [Google Drive](https://drive.google.com/drive/folders/1K3lpf-nONYxQ4OK8QV42Lvp_dYe_VJV8). <!-- TODO: move to Zenodo and replace with DOI -->
-
 ## Setup
 
 **Local install:**
